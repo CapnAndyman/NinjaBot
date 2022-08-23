@@ -1,6 +1,7 @@
 import sqlite3
 from sqlcipher3 import dbapi2 as sqlitecipher
 from sqlite3 import Error
+from credentials import Credentials
 
 
 class Ninjabotsql:
@@ -24,7 +25,7 @@ class Ninjabotsql:
         :return:
         """
         cur = self.conn.cursor()
-        cur.execute("pragma key='#Rt-HPvbqa.S2z^A'")
+        cur.execute(Credentials.dbkey)
         cur.execute(sqlquery, sqlvalues)
 
         rows = cur.fetchall()
@@ -180,7 +181,7 @@ class Ninjabotsql:
         :return:
         """
         cur = self.conn.cursor()
-        cur.execute("pragma key='#Rt-HPvbqa.S2z^A'")
+        cur.execute(Credentials.dbkey)
         cur.execute(sqlquery)
 
         rows = cur.fetchall()
@@ -194,7 +195,7 @@ class Ninjabotsql:
         :return:
         """
         cur = self.conn.cursor()
-        cur.execute("pragma key='#Rt-HPvbqa.S2z^A'")
+        cur.execute(Credentials.dbkey)
         cur.execute(sqlquery, sqlvalues)
         self.conn.commit()
 

@@ -11,3 +11,5 @@ class Credentials:
         self.prodchanneltest = None
         self.devchannel = None
         self.devchanneltest = None
+        #DB Encryption key is dropped here
+        self.dbkey = "pragma key=''"
